@@ -1,0 +1,30 @@
+# --- Global IDE / OS ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# --- Laravel (backend) ---
+/backend/vendor/
+# clés / stockage
+/backend/storage/*.key
+/backend/public/storage
+# env
+/backend/.env
+/backend/.env.*.backup
+# caches Laravel
+/backend/bootstrap/cache/*.php
+/backend/.phpunit.result.cache
+
+# --- Angular (frontend) ---
+/frontend/node_modules/
+#/frontend/.angular/   # (optionnel, cache de build)
+/frontend/dist/
+/frontend/tmp/
+
+# --- Monorepo générique ---
+/node_modules/
+.env
