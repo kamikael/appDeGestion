@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id('evenement_id');
 
             $table->unsignedBigInteger('createur_id');
-            $table->foreign('createur_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreign('createur_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->string('nom', 150);
             $table->text('description');

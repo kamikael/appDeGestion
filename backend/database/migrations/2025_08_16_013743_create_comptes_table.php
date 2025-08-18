@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id('compte_id');
 
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->enum('type_paiement', ['bank','mobile_money']);
             $table->string('numero_compte', 100);
