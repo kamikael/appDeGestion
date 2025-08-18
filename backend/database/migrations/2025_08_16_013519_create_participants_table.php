@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id('participant_id');
 
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->unsignedBigInteger('evenement_id');
             $table->foreign('evenement_id')->references('evenement_id')->on('evenements')->onDelete('cascade');
@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->timestamps();
             $table->softDeletes();
 
-            $table->unique(['user_id','evenement_id']); 
+            $table->unique(['user_id','evenement_id']);
         });
     }
     public function down(): void
