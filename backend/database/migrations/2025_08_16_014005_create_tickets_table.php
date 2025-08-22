@@ -12,7 +12,7 @@ return new class extends Migration {
 
             $table->unsignedBigInteger('participant_id');
             $table->foreign('participant_id')->references('participant_id')->on('participants')->onDelete('cascade');
-
+            $paiement_id = $table->foreignId('paiement_id')->nullable()->constrained('paiements');
             $table->unsignedBigInteger('evenement_id');
             $table->foreign('evenement_id')->references('evenement_id')->on('evenements')->onDelete('cascade');
 
