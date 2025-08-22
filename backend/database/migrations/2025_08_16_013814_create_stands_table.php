@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('image', 255)->nullable();
             $table->text('description')->nullable();
             $table->boolean('est_vedette')->default(false);
-            $table->enum('statut', ['en_attente','approuve','refuse'])->default('en_attente');
+             $table->enum('statut', ['en_attente', 'pre_approve', 'approuve', 'refuse'])->default('en_attente');
 
             $table->timestamps();
             $table->softDeletes();
