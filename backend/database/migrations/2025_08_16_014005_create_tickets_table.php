@@ -15,7 +15,8 @@ return new class extends Migration {
 
             $table->unsignedBigInteger('evenement_id');
             $table->foreign('evenement_id')->references('evenement_id')->on('evenements')->onDelete('cascade');
-
+            $paiement_id = $table->foreignId('paiement_id')->nullable()->constrained('paiements');
+ 
             $table->enum('type_ticket', ['standard','premium','VIP']);
             $table->decimal('prix', 10, 2);
             $table->integer('stock')->default(0); 

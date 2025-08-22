@@ -12,6 +12,11 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
+    ->withMiddleware(function () {
+        Middleware::alias([
+            'isAdmin' => IsAdmin::class,
+        ]);
+    })
     ->withMiddleware(function (Middleware $middleware): void {
         // ➜ Active le CORS globalement
         $middleware->append(HandleCors::class);
